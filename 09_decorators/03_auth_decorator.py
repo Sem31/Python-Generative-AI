@@ -6,6 +6,7 @@ def require_authentication(func):
     def wrapper(user_role):
         if user_role != "admin":
             print("Access denied: User is not authenticated as admin.")
+            return None
         else:
             return func(user_role)
 
